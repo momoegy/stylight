@@ -1,0 +1,10 @@
+http://:5000 {
+
+	root 	web
+	fastcgi / 127.0.0.1:9000 php
+	log		stdout
+	errors	stdout
+
+	startup	/usr/sbin/php-fpm7
+
+}
