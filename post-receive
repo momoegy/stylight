@@ -9,4 +9,4 @@ cd app
 docker stop app
 docker rm app
 docker build -t app .
-docker run -d --name=app -p 8080:5000
+docker run -d --name=app -p 8080:5000 app
