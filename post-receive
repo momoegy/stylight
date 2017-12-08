@@ -1,12 +1,21 @@
 #!/bin/bash
 
-TEMP=$( mktemp -d )
-cd $TEMP
+while read oldrev newrev refname
 
-git clone /home/ubuntu/sites/app app
+  do
+      branch=$(git rev-parse --symbolic --abbrev-ref $refname)
+      if [ "master" == "$branch" ]; then
 
-cd app
-docker stop app
-docker rm app
-docker build -t app .
-docker run -d --name=app -p 8080:5000 app
+    		TEMP=$( mktemp -d )
+    		cd $TEMP
+
+        git clone /home/ubuntu/sites/app app
+
+        cd app
+        docker stop app
+        docker rm app
+        docker build -t app .
+        docker run -d --name=app -p 8080:5000 app
+
+      fi
+  done
