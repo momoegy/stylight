@@ -16,6 +16,6 @@ while read oldrev newrev refname
         docker rm app
         docker build -t app .
         docker run -d --name=app -p 8080:5000 app
-
+        rm -rf $TEMP
       fi
   done
