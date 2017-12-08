@@ -53,7 +53,7 @@ function get_ip_range( $cidr ) {
 
 				<form method="GET" action="">
 
-					<input name="cidr" type="text" value="<?php print $_GET[ 'cidr' ] ?>">
+					<input name="cidr" type="text" value="<?php print $_GET[ 'cidr' ] ?>" placeholder='e.g. 213.139.12.16/5'>
 					<input type="submit" value="go!">
 
 				</form>
